@@ -8,7 +8,7 @@ Scenario: Using the arachni, look for cross site scripting and verify no issues 
      | url                 | ARACHNI_TARGET |
   When I launch an "arachni" attack with:
     """
-      bundle exec arachni --modules=xss --depth=1 --link-count=10 --auto-redundant=2 <url>
+      bundle exec arachni <url>
     """
   Then the output should contain "0 issues were detected."
   And the output should contain "Without issues:"
